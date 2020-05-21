@@ -15,13 +15,13 @@ body, html {
 
 @media (max-width: 466px) {
   body, html {
-    width: 111%;
+    width: 100%;
   }
 }
 
 @media (max-width: 400px) {
   body, html {
-    width: 125%;
+    width: 100%;
   }
 }
 
@@ -96,13 +96,13 @@ header #logo span {
     margin-top: 30px;
     width: 100%;
     font-size: 1em;
-    margin-left: 27%;
+    margin-left: 15%;
   }
 
   #about {
     float: center;
-    width: 100%;
-    margin-left: 7%;
+    width: 70%;
+    margin-left: 17%;
   }
 
   #about .tel {
@@ -358,16 +358,21 @@ header.fixed #logo {
   }
 }
 
+#adressMap {
+  height: 400px;
+  width: 110%;
+}  
 
-@media (min-width: 1001px) {
-  #contacts .googooMap {
-    width: 10%;
+
+@media (max-width: 1000px){
+  #adressMap {
+    width: 100%;
   }
 }
 
-@media (max-width: 1000px){
-  #contacts .googooMap {
-    width: 50%;
+@media (max-width: 450px){
+  #adressMap {
+    width: 130%;
   }
 }
 
@@ -595,7 +600,7 @@ h1, h2, h3, h4, h5 {
     width: 100px;
     height: 100px;
     top: 75%;
-    left: 70%;
+    left: 65%;
   }
 }
 
@@ -763,49 +768,27 @@ h1, h2, h3, h4, h5 {
   100% {opacity: 0.85;}
 }
 
-#successWindow {
-  width: 400px;
-  height: 400px;
-  margin: 40px auto;
-  background: #24506A;
-  border: 2px solid #BEA78B;
-  border-radius: 20px;
-  z-index: 150; 
-  display: none;
-  position: fixed; 
-  left: 0;
-  right: 0;
-  top:25%;
-  bottom: 0;
-  font-family: Arimo, 'Old Standard TT', sans-serif;
+.message {
+  color:#FDDFB9;
+  font-size: 1.5em;
+  margin-top: 27%;
 }
 
-#gray2{
-  -webkit-animation: gray1 0.25s ease-in;
-  animation: gray1 0.25s ease-in;
-  opacity: 0.85; 
-  padding: 15px;
-  background-color: rgba(1,1,1,0.75); 
-  position: fixed; 
-  left: 0;
-  right: 0;
-  top:0;
-  bottom: 0; 
-  display: none; 
-  z-index:100; 
-  overflow: auto; 
+.message span {
+  color:#FDDFB9;
+  font-size: 1.5em;
+  margin-left: 15%;
 }
 
-.overlay {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
+.message p {
+  color:#FDDFB9;
+  font-size: 1em;
+  margin-left: -10%;
+}
+
+.hidden {
   display: none;
-  /* фон затемнения */
-  background-color: rgba(0, 0, 0, 0.65);
-  position: fixed; /* фиксированное позиционирование */
-  cursor: default; /* тип курсора */
-  }
+}
+
+
    

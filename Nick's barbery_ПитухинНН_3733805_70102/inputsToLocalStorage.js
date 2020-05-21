@@ -7,18 +7,35 @@ var clientNameF = document.getElementById('clientName');
 var clientTelF = document.getElementById('clientTel');
 var clientEmailF = document.getElementById('clientWantedDate');
 
-document.getElementById('mess_send').onclick = populateStorage1
-document.getElementById('order_send').onclick = populateStorage2
+document.querySelector('#blink, .recBtn').addEventListener('click', (e) => {
+    document.querySelector('.message').classList.add('hidden');
+    document.querySelector('#f1').classList.remove('hidden');
+    document.querySelector('.form_head').classList.remove('hidden');
+    document.getElementById('f1').reset();
+});
 
-function populateStorage1() {
-    localStorage.setItem('clientName2', document.getElementById('clientName2').value);
-    localStorage.setItem('clientMsg', document.getElementById('message').value);
-}
 
-function populateStorage2() {
-    localStorage.setItem('workType', document.getElementById('workType').value);
-    localStorage.setItem('clientName', document.getElementById('clientName').value);
-    localStorage.setItem('clientTel', document.getElementById('clientTel').value);
-    localStorage.setItem('clientWantedDate', document.getElementById('clientWantedDate').value);
-    sessionStorage.setItem('clientName', document.getElementById('clientName').value);
+document.querySelector('#mess_send').addEventListener('click', (e) => {
+    e.preventDefault();
+    populateStorage(['clientName2', 'message']);
+    document.getElementById('form_input').reset();
+    return false;
+});
+
+document.querySelector('#order_send').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('.message').classList.remove('hidden');
+    document.querySelector('#f1').classList.add('hidden');
+    document.querySelector('.form_head').classList.add('hidden');
+    populateStorage(['workType', 'clientName', 'clientTel', 'clientWantedDate']);
+    return false;
+});
+
+function populateStorage(data = [1, 2, 3, 4]) {
+    data.forEach(data => {
+        const elem = document.getElementById(data);
+        if (elem) {
+            localStorage.setItem(data, elem.value);
+        }
+    });
 }
